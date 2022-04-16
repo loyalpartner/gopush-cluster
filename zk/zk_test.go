@@ -36,7 +36,7 @@ func TestZK(t *testing.T) {
 		t.Error(err)
 	}
 	// registertmp
-	err = RegisterTemp(conn, "/test/test", "1")
+	err = RegisterTemp(conn, "/test/test", []byte("1"))
 	if err != nil {
 		t.Error(err)
 	}

@@ -17,8 +17,8 @@
 package main
 
 import (
-	log "github.com/alecthomas/log4go"
 	"flag"
+	log "github.com/alecthomas/log4go"
 	"github.com/loyalpartner/gopush-cluster/perf"
 	"github.com/loyalpartner/gopush-cluster/process"
 	"github.com/loyalpartner/gopush-cluster/ver"

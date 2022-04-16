@@ -1,6 +1,6 @@
 module github.com/loyalpartner/gopush-cluster
 
-go 1.18
+go 1.17
 
 require (
 	github.com/Terry-Mao/goconf v0.0.0-20161115082538-13cb73d70c44

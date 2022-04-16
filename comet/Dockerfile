@@ -10,15 +10,9 @@ RUN echo "https://mirrors.ustc.edu.cn/alpine/v3.5/main" > /etc/apk/repositories 
 # Build the app and copy the bin app to the container
 # CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o build/release/app ./main.go
 
-COPY ./comet-example.conf /comet.conf
-COPY ./log.xml /comet_log.xml
-COPY ./comet /comet
-
-RUN set -ex \
-  && mkdir -p /opt/comet \
-  && mv /comet.conf /opt/comet/comet.conf \
-  && mv /comet_log.xml /opt/comet/comet_log.xml \
-  && mv /comet /opt/comet/comet
+COPY ./comet-example.conf /opt/comet/comet.conf
+COPY ./log.xml /opt/comet/comet_log.xml
+COPY ./comet /opt/comet/comet
 
 WORKDIR /opt/comet
 

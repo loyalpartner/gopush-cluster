@@ -21,8 +21,8 @@
 package main
 
 import (
-	log "github.com/alecthomas/log4go"
 	"encoding/json"
+	log "github.com/alecthomas/log4go"
 	"github.com/loyalpartner/gopush-cluster/rpc"
 	myzk "github.com/loyalpartner/gopush-cluster/zk"
 	"github.com/samuel/go-zookeeper/zk"
@@ -49,9 +49,12 @@ func InitZK() (*zk.Conn, error) {
 	}
 	// comet tcp, websocket and rpc bind address store in the zk
 	nodeInfo := &rpc.CometNodeInfo{}
-	nodeInfo.RpcAddr = Conf.RPCBind
-	nodeInfo.TcpAddr = Conf.TCPBind
-	nodeInfo.WsAddr = Conf.WebsocketBind
+	// nodeInfo.RpcAddr = Conf.RPCBind
+	// nodeInfo.TcpAddr = Conf.TCPBind
+	// nodeInfo.WsAddr = Conf.WebsocketBind
+	nodeInfo.RpcAddr = []string{"comet:6970", "comet:7070"}
+	nodeInfo.TcpAddr = []string{"comet:6969", "comet:7069"}
+	nodeInfo.WsAddr = []string{"comet:6968", "comet:7068"}
 	nodeInfo.Weight = Conf.ZookeeperCometWeight
 	data, err := json.Marshal(nodeInfo)
 	if err != nil {

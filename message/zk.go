@@ -21,8 +21,8 @@
 package main
 
 import (
-	log "github.com/alecthomas/log4go"
 	"encoding/json"
+	log "github.com/alecthomas/log4go"
 	"github.com/loyalpartner/gopush-cluster/rpc"
 	myzk "github.com/loyalpartner/gopush-cluster/zk"
 	"github.com/samuel/go-zookeeper/zk"
@@ -40,7 +40,8 @@ func InitZK() (*zk.Conn, error) {
 		return conn, err
 	}
 	nodeInfo := rpc.MessageNodeInfo{}
-	nodeInfo.Rpc = Conf.RPCBind
+	// nodeInfo.Rpc = Conf.RPCBind
+	nodeInfo.Rpc = []string{"message:8070", "message:8270"}
 	nodeInfo.Weight = Conf.NodeWeight
 	data, err := json.Marshal(nodeInfo)
 	if err != nil {
