@@ -2,8 +2,8 @@ version: '3'
 services:
   comet:
     build:
-      context: ./comet
-      dockerfile: Dockerfile
+      context: ./
+      dockerfile: ./docker/comet
     image: comet
     container_name: comet
     restart: always
@@ -33,7 +33,9 @@ services:
       - zookeeper
 
   web:
-    build: ./web
+    build:
+      context: ./
+      dockerfile: ./docker/web
     image: web
     container_name: web
     restart: always
@@ -49,8 +51,8 @@ services:
 
   message:
     build:
-      context: ./message
-      dockerfile: Dockerfile
+      context: ./
+      dockerfile: ./docker/message
     image: message
     container_name: message
     restart: always

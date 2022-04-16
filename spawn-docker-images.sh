@@ -1,6 +1,6 @@
 echo 'build images based alpine3.5 for gopush-cluster ...'
 
-cd $GOPATH/src/github.com/Terry-Mao/gopush-cluster/message
+cd message
 #go install
 #cp message-example.conf $GOPATH/bin/message.conf
 #cp log.xml $GOPATH/bin/message_log.xml

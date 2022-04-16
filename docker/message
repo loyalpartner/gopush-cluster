@@ -1,0 +1,34 @@
+FROM golang:1.16.1-alpine AS builder
+
+MAINTAINER Xuehao Zhou <robertzhouxh@gmail.com>
+
+ENV GOPROXY=https://goproxy.cn,direct
+ENV GOMOD=/app/go.mod
+ENV GO111MODULE=on
+
+ENV APP /app
+ENV TYPE message
+COPY ./ $APP/
+WORKDIR $APP/$TYPE
+
+RUN echo "https://mirrors.ustc.edu.cn/alpine/v3.5/main" > /etc/apk/repositories \
+    && echo "https://mirrors.ustc.edu.cn/alpine/v3.5/community" >> /etc/apk/repositories \
+    && apk update \
+    && apk add --no-cache ca-certificates
+# Build the app and copy the bin app to the container
+RUN go mod download 
+RUN go build -o /$TYPE ./
+
+FROM alpine:3.12
+
+ENV APP /app
+ENV TYPE message
+ENV OPTDIR /opt/$TYPE
+
+COPY --from=builder /$TYPE /$OPTDIR/$TYPE
+COPY --from=builder $APP/$TYPE/${TYPE}-example.conf $OPTDIR/$TYPE.conf
+COPY --from=builder $APP/$TYPE/log.xml $OPTDIR/${TYPE}_log.xml
+
+CMD /$OPTDIR/$TYPE -c $OPTDIR/$TYPE.conf
+ 
+EXPOSE 8070 8270 8170
