@@ -106,7 +106,7 @@ $ ./dependencies.sh
 
 2.install message,comet,web node
 ```sh
-$ cd $GOPATH/src/github.com/Terry-Mao/gopush-cluster/message
+$ cd $GOPATH/src/github.com/loyalpartner/gopush-cluster/message
 $ go install
 $ cp message-example.conf $GOPATH/bin/message.conf
 $ cp log.xml $GOPATH/bin/message_log.xml
@@ -183,12 +183,12 @@ succeed response:
 ```
 
 ## Configuration
-[web](https://github.com/Terry-Mao/gopush-cluster/blob/master/web/web-example.conf)
-[comet](https://github.com/Terry-Mao/gopush-cluster/blob/master/comet/comet-example.conf)
-[message](https://github.com/Terry-Mao/gopush-cluster/blob/master/message/message-example.conf)
+[web](https://github.com/loyalpartner/gopush-cluster/blob/master/web/web-example.conf)
+[comet](https://github.com/loyalpartner/gopush-cluster/blob/master/comet/comet-example.conf)
+[message](https://github.com/loyalpartner/gopush-cluster/blob/master/message/message-example.conf)
 
 ## Examples
-java: [gopush-cluster-sdk](https://github.com/Terry-Mao/gopush-cluster-sdk)
+java: [gopush-cluster-sdk](https://github.com/loyalpartner/gopush-cluster-sdk)
 
 ios: [CocoaGoPush](https://github.com/gdier/CocoaGoPush)
 
@@ -196,15 +196,15 @@ javascript: [gopush-cluster-javascript-sdk](https://github.com/Lanfei/gopush-clu
 
 ## Documentation
 `web`
-[external](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/web/external_proto_en.textile)
-[internal](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/web/internal_proto_en.textile)
+[external](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/web/external_proto_en.textile)
+[internal](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/web/internal_proto_en.textile)
 
 `comet`
-[client](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/comet/client_proto_en.textile)
-[internal](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/comet/rpc_proto_en.textile)
+[client](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/comet/client_proto_en.textile)
+[internal](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/comet/rpc_proto_en.textile)
 
 `message`
-[internal](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/message/rpc_proto_en.textile)
+[internal](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/message/rpc_proto_en.textile)
 
 ## FAQ
 1.install hg

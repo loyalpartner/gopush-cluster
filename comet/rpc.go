@@ -19,8 +19,8 @@ package main
 import (
 	log "github.com/alecthomas/log4go"
 	"errors"
-	"github.com/Terry-Mao/gopush-cluster/id"
-	myrpc "github.com/Terry-Mao/gopush-cluster/rpc"
+	"github.com/loyalpartner/gopush-cluster/id"
+	myrpc "github.com/loyalpartner/gopush-cluster/rpc"
 	"net"
 	"net/rpc"
 	"sync"

@@ -18,7 +18,7 @@ package main
 
 import (
 	log "github.com/alecthomas/log4go"
-	myrpc "github.com/Terry-Mao/gopush-cluster/rpc"
+	myrpc "github.com/loyalpartner/gopush-cluster/rpc"
 	"net/http"
 	"strconv"
 	"time"

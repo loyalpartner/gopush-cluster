@@ -19,7 +19,7 @@ package main
 import (
 	log "github.com/alecthomas/log4go"
 	"encoding/json"
-	myrpc "github.com/Terry-Mao/gopush-cluster/rpc"
+	myrpc "github.com/loyalpartner/gopush-cluster/rpc"
 	"io/ioutil"
 	"net/http"
 	"net/url"

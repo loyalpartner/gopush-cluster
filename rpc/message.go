@@ -19,7 +19,7 @@ package rpc
 import (
 	log "github.com/alecthomas/log4go"
 	"encoding/json"
-	myzk "github.com/Terry-Mao/gopush-cluster/zk"
+	myzk "github.com/loyalpartner/gopush-cluster/zk"
 	"github.com/samuel/go-zookeeper/zk"
 	"net/rpc"
 	"path"

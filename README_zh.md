@@ -108,7 +108,7 @@ $ ./dependencies.sh
 
 2.安装message、comet、web模块(配置文件请依据实际机器环境配置)
 ```sh
-$ cd $GOPATH/src/github.com/Terry-Mao/gopush-cluster/message
+$ cd $GOPATH/src/github.com/loyalpartner/gopush-cluster/message
 $ go install
 $ cp message-example.conf $GOPATH/bin/message.conf
 $ cp log.xml $GOPATH/bin/message_log.xml
@@ -220,7 +220,7 @@ $ make install
 4. 修改源码(这里用docker-compose 一键部署)
 
 ```sh
-$ cd ~/go-workspace/src/github.com/Terry-Mao/gopush-cluster
+$ cd ~/go-workspace/src/github.com/loyalpartner/gopush-cluster
 step1. 修改 comet/zk.go, 从52行开始注释三行，添加三行
 
 52	// nodeInfo.RpcAddr = Conf.RPCBind
@@ -247,12 +247,12 @@ $ docker pull wurstmeister/zookeeper
 
 #################### 在 robertzhouxh/gobuild-alpine-3.5 (go 版本为1.7.5) 容器内编译 comet， web， message 可执行文件 #######################
 $ docker run -it --rm -v ~/go-workspace:/go robertzhouxh/gobuild-alpine-3.5 bash
-$ cd /go/src/github.com/Terry-Mao/gopush-cluster
+$ cd /go/src/github.com/loyalpartner/gopush-cluster
 $ ./spawn-docker-images.sh
 $ exit
 
 #################### 在宿主机内 #######################
-cd ~/go-workspace/src/github.com/Terry-Mao/gopush-cluster
+cd ~/go-workspace/src/github.com/loyalpartner/gopush-cluster
 docker-compose build
 docker-compose up 或者 docker-compose up -d
 ```
@@ -272,16 +272,16 @@ $ curl -d "{\"test\":1}" http://localhost:8091/1/admin/push/private?key=Terry-Ma
 
 ## 配置
 ### web节点的配置文件示例：
-[web](https://github.com/Terry-Mao/gopush-cluster/blob/master/web/web-example.conf)
+[web](https://github.com/loyalpartner/gopush-cluster/blob/master/web/web-example.conf)
 
 ### comet节点的配置文件示例：
-[comet](https://github.com/Terry-Mao/gopush-cluster/blob/master/comet/comet-example.conf)
+[comet](https://github.com/loyalpartner/gopush-cluster/blob/master/comet/comet-example.conf)
 
 ### message节点的配置文件示例：
-[message](https://github.com/Terry-Mao/gopush-cluster/blob/master/message/message-example.conf)
+[message](https://github.com/loyalpartner/gopush-cluster/blob/master/message/message-example.conf)
 
 ## 例子
-java: [gopush-cluster-sdk](https://github.com/Terry-Mao/gopush-cluster-sdk)
+java: [gopush-cluster-sdk](https://github.com/loyalpartner/gopush-cluster-sdk)
 
 ios: [CocoaGoPush](https://github.com/gdier/CocoaGoPush)
 
@@ -289,15 +289,15 @@ javascript: [gopush-cluster-javascript-sdk](https://github.com/Lanfei/gopush-clu
 
 ## 文档
 ### web节点相关的文档：
-[内部协议](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/web/internal_proto_zh.textile)主要针对内部管理如推送消息、管理comet节点等。
+[内部协议](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/web/internal_proto_zh.textile)主要针对内部管理如推送消息、管理comet节点等。
 
-[客户端协议](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/web/external_proto_zh.textile)主要针对客户端使用，如获取节点、获取离线消息等。
+[客户端协议](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/web/external_proto_zh.textile)主要针对客户端使用，如获取节点、获取离线消息等。
 ### comet节点相关的文档：
-[客户端协议](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/comet/client_proto_zh.textile)主要针对客户端连接comet节点的协议说明。
+[客户端协议](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/comet/client_proto_zh.textile)主要针对客户端连接comet节点的协议说明。
 
-[内部RPC协议](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/comet/rpc_proto_zh.textile)主要针对内部RPC接口使用的说明。
+[内部RPC协议](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/comet/rpc_proto_zh.textile)主要针对内部RPC接口使用的说明。
 ### message节点的相关文档：
-[内部RPC协议](https://github.com/Terry-Mao/gopush-cluster/blob/master/wiki/message/rpc_proto_zh.textile)主要针对内部RPC接口的使用说明。
+[内部RPC协议](https://github.com/loyalpartner/gopush-cluster/blob/master/wiki/message/rpc_proto_zh.textile)主要针对内部RPC接口的使用说明。
 
 ## 更多
 TODO

@@ -25,8 +25,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Terry-Mao/gopush-cluster/ketama"
-	myrpc "github.com/Terry-Mao/gopush-cluster/rpc"
+	"github.com/loyalpartner/gopush-cluster/ketama"
+	myrpc "github.com/loyalpartner/gopush-cluster/rpc"
 	log "github.com/alecthomas/log4go"
 	"github.com/garyburd/redigo/redis"
 )
